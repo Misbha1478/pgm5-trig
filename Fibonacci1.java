@@ -1,11 +1,12 @@
-import java.util.Scanner;
-
-public class Fibonacci {
+public class Fibonacci1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of terms for Fibonacci series: ");
-        int n = scanner.nextInt();
-        
+        if (args.length < 1) {
+            System.out.println("Please provide the number of terms as a command-line argument.");
+            return;
+        }
+
+        int n = Integer.parseInt(args[0]);
+
         int a = 0, b = 1;
         System.out.print("Fibonacci Series: " + a + " " + b);
 
@@ -15,6 +16,7 @@ public class Fibonacci {
             a = b;
             b = next;
         }
-        scanner.close();
+
+        System.out.println();
     }
 }
